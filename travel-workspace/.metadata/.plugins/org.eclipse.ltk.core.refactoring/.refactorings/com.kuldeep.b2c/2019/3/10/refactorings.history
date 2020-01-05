@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;b2c.SearchPage&apos; to &apos;SearchPageTest&apos;&#x0A;- Original project: &apos;com.kuldeep.b2c&apos;&#x0A;- Original element: &apos;b2c.SearchPage&apos;&#x0A;- Renamed element: &apos;b2c.SearchPageTest&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;SearchPage&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src\/test\/java&lt;b2c{SearchPage.java[SearchPage" matchStrategy="1" name="SearchPageTest" qualified="false" references="true" similarDeclarations="false" stamp="1551866140068" textual="false" version="1.0"/>
+</session>

@@ -1,0 +1,19 @@
+package part1;
+
+class Thing {
+	public String name;
+	public static String description;
+}
+
+public class Var {
+
+	public static void main(String[] args) {
+		Thing.description = "I am desc";
+		System.out.println(Thing.description);
+		
+		Thing thing1 = new Thing();
+		Thing thing2 = new Thing();
+
+	}
+
+}

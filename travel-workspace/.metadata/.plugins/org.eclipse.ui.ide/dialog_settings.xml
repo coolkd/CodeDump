@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.dialogs.FilteredResourcesSelectionDialog">
+		<item value="false" key="FilterByLocation"/>
+		<item value="true" key="ShowStatusLine"/>
+		<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0A;&lt;History&gt;&#x0A;&lt;historyRootNode&gt;&#x0A;&lt;infoNode path=&quot;/com.kuldeep.b2c/src/test/java/b2c/SearchPageTest.java&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/com.kuldeep.b2c/src/test/java/b2c/BookingWidgetTest.java&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/com.kuldeep.b2c/pom.xml&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/com.kuldeep.b2c/src/test/java/b2c/LoginPageTest.java&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/com.kuldeep.b2c/data.properties&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/com.kuldeep.b2c/src/test/java/b2c/HomePageTest.java&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/com.kuldeep.b2c/src/test/java/b2c/HomePageLinkTest.java&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/com.kuldeep.b2c/testng.xml&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;/historyRootNode&gt;&#x0A;&lt;/History&gt;" key="History"/>
+		<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0A;&lt;workingSet workingSetName=&quot;&quot;/&gt;" key="WorkingSet"/>
+		<item value="false" key="ShowDerived"/>
+		<section name="DialogBoundsSettings">
+			<item value="600" key="DIALOG_WIDTH"/>
+			<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+			<item value="500" key="DIALOG_HEIGHT"/>
+			<item value="383" key="DIALOG_X_ORIGIN"/>
+			<item value="53" key="DIALOG_Y_ORIGIN"/>
+		</section>
+	</section>
+	<section name="SaveAsDialogSettings">
+		<item value="613" key="DIALOG_WIDTH"/>
+		<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+		<item value="598" key="DIALOG_HEIGHT"/>
+		<item value="377" key="DIALOG_X_ORIGIN"/>
+		<item value="0" key="DIALOG_Y_ORIGIN"/>
+	</section>
+</section>

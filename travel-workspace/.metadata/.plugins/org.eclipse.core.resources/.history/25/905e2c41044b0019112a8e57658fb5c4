@@ -1,0 +1,66 @@
+package b2c;
+
+import java.util.Iterator;
+import java.util.Set;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+import pages.HomePage;
+import resources.BasePageTest;
+import resources.PropertyLoader;
+
+public class HomePageTest extends BasePageTest {
+
+	// @Test(priority = 1)
+	public void testHomePage() {
+		driver.get(PropertyLoader.getProperty("url"));
+
+		HomePage homePage = new HomePage(driver);
+		homePage.clickSignIn();
+		Assert.assertEquals(driver.getCurrentUrl(), PropertyLoader.getProperty("signInUrl"));
+	}
+
+	@Test
+	public void clickOffersLink() throws InterruptedException {
+
+		driver.get(PropertyLoader.getProperty("url"));
+		HomePage homePage = new HomePage(driver);
+
+		WebElement offerLinks = driver.findElement(By.xpath("//*[@id=\"offerWidget\"]"));
+		offerLinks.findElements(By.tagName("a")).size();
+
+		for (int i = 1; i < offerLinks.findElements(By.tagName("a")).size(); i++) {
+
+			String clickOnLinkTab = Keys.chord(Keys.CONTROL, Keys.ENTER);
+			offerLinks.findElements(By.tagName("a")).get(i).sendKeys(clickOnLinkTab);
+
+			Thread.sleep(5000);
+			String selectedString = driver.findElement(By.xpath("//*[@id=\"verticalTab\"]/ul/li[1]/div[2]")).getText();
+					
+
+			System.out.println("clickOnLinkTab:" + clickOnLinkTab + " selectedString:" + selectedString);
+			Assert.assertEquals(clickOnLinkTab.toUpperCase(), selectedString.toUpperCase());
+
+			/*
+			 * Set<String> linkTitles = driver.getTitle(); Iterator<String> it =
+			 * linkTitles.iterator();
+			 * 
+			 * 
+			 * while (it.hasNext()) { String string = (String) it.next();
+			 * System.out.println(string);
+			 * 
+			 * }
+			 */
+		}
+	}
+	/*
+	 * while (it.hasNext()) {
+	 * 
+	 * driver.switchTo().window(it.next()); System.out.println(driver.getTitle()); }
+	 */
+
+}

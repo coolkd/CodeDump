@@ -1,0 +1,71 @@
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Capabilities;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.htmlunit.HtmlUnitDriver;
+import org.openqa.selenium.phantomjs.PhantomJSDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import com.gargoylesoftware.htmlunit.BrowserVersion;
+
+public class SearchTask {
+
+	public void perform() {
+		System.setProperty("webdriver.chrome.driver","/home/kuldeep/Downloads/chromedriver");
+//		WebDriver driver = new ChromeDriver();
+		//HtmlUnitDriver driver = new HtmlUnitDriver(BrowserVersion.CHROME);
+		//driver.setJavascriptEnabled(true);
+		String phantomjsExeutableFilePath = "/home/kuldeep/Downloads/phantomjs-2.1.1-linux-x86_64/binphantomjs-2.1.1-windows/bin/phantomjs";
+		System.setProperty("phantomjs.binary.path", phantomjsExeutableFilePath);		
+       
+		// Initiate PhantomJSDriver.
+		WebDriver driver = new PhantomJSDriver();	
+
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		try {
+			driver.get("http://demo.hmatravel.com/mock/");
+			System.out.println(driver.getTitle());
+//			driver.findElement(By.id("preferredCarrier")).clear();
+			driver.findElement(By.id("firstName_1")).sendKeys("P");
+			System.out.println(driver.getTitle());
+			driver.findElement(By.id("lastName_1")).sendKeys("Chandu");
+			driver.findElement(By.id("dob_1")).sendKeys("14/05/1985");
+			driver.findElement(By.id("searchButton")).click();
+			// WebDriverWait wait = new WebDriverWait(driver, 4000);
+			// wait.until(ExpectedConditions.visibilityOfElementLocated((By.id("id"))));
+
+			 driver.findElement(By.id("confirmButton")).click();
+			System.out.println(driver.getTitle());
+			waitUntilFound(driver, By.className("book_button"), 30);
+			System.out.println("Results found");
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		} finally {
+//			driver.close();
+		}
+	}
+
+	private void waitUntilFound(WebDriver driver, By by, int timeout) throws InterruptedException {
+		NoSuchElementException ex = null;
+		for (int i = 0; i < timeout; i++) {
+			try {
+				driver.findElement(by);
+				return;
+			} catch (NoSuchElementException e) {
+				ex = e;
+				Thread.sleep(100);
+			}
+		}
+		throw ex;
+	}
+
+	public static void main(String[] args) {
+		new SearchTask().perform();
+
+	}
+
+}

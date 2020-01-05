@@ -1,0 +1,14 @@
+package part1;
+
+class Thing {
+public String name;
+public static String description;
+}
+
+public class Var {
+
+	public static void main(String[] args) {
+
+	}
+
+}

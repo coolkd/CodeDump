@@ -1,0 +1,32 @@
+package b2c;
+
+import org.testng.annotations.Test;
+import org.testng.Assert;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import pages.HomePage;
+import resources.BasePageTest;
+import resources.PropertyLoader;
+
+public class HomePageTest extends BasePageTest {
+
+	@BeforeTest
+	public void setup() {
+		initializeDriver();
+	}
+
+	//@AfterTest
+	public void cleanup() {
+		driver.quit();
+	}
+
+	@Test
+	public void testHomePage() {
+		driver.get(PropertyLoader.getProperty("url"));
+
+		HomePage homePage = new HomePage(driver);
+		homePage.clickSignIn();
+		Assert.assertEquals(driver.getCurrentUrl(), PropertyLoader.getProperty("signInUrl"));
+	}
+
+}
